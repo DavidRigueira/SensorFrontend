@@ -1,0 +1,13 @@
+<h1 class="mt-4"> Información más actual guardada</h1>
+<p>Solo si estás logueado podrás ver esta información</p>
+
+<div *ngIf="isLogued()">
+  <div>Nivel CO2: {{dato.co2}}</div>
+  <div>Nivel temperatura: {{dato.temperatura}}    Nivel humedad:{{dato.humedad}}</div>
+  <div>Fecha lectura:{{dato.fecha | date:'dd/MM/YYYY hh:mm' }}</div>
+  <div>Nº Sensor: {{dato.idSensor}}</div>
+</div>
+
+<div *ngIf="!isLogued()">
+  No tienes permisos para ver este contenido
+</div>

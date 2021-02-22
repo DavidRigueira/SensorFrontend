@@ -1,0 +1,20 @@
+    <div class="menu">
+      <a [routerLink]="['datos-list']">
+        <div>Listado de datos</div>
+      </a>
+      <a [routerLink]="['datos-actuales']">
+        <div>Datos más actual</div>
+      </a>
+
+      <a [routerLink]="['registro']">
+        <div>Registrar usuario</div>
+      </a>
+
+
+      <a [routerLink]="['']" *ngIf="isLogued()" (click)="logout()">Logout</a>
+
+      <a [routerLink]="['login']" *ngIf=" ! isLogued()" [routerLink]="['login']">Login</a>
+
+      <span *ngIf="isLogued()">  Accediendo: {{getEmailLogued()}} </span>
+
+    </div>

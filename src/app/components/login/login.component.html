@@ -1,0 +1,16 @@
+<h1 class="mt-4">Acceso al sistema</h1>
+<p>Puedes acceder con este usuario de prueba email: admin@admin.es  password:Ad1234</p>
+<form [formGroup]="form" (submit)="onSubmit(form.value)">
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input name="email" class="form-control" formControlName="email" type="text" matInput placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" class="form-control" name="password" formControlName="password" matInput
+      placeholder="Password">
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Login</button>
+  </div>
+</form>

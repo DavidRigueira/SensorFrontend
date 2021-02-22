@@ -1,0 +1,12 @@
+<h1 class="mt-4">Lista de datos del sensor</h1>
+<a class="mt-4" [routerLink]="['/datos-edit']">Añadir nuevo dato</a>
+<div *ngFor="let dato of listaDatos">
+  Nº Sendor: {{dato.idSensor}} &nbsp;&nbsp;
+  CO2: {{dato.co2}} &nbsp;&nbsp;
+  Temp: {{dato.temperatura}} &nbsp;&nbsp;
+  Humedad:{{dato.humedad}} &nbsp;&nbsp;
+  Fecha: {{dato.fecha | date:'dd/MM/YYYY'}}
+
+  <a [routerLink]="['/datos-edit', dato._id]"> Editar </a>
+  <a [routerLink]="" (click)="borrarDato(dato._id)"> Borrar </a>
+</div>

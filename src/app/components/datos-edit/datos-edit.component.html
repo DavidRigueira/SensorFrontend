@@ -1,0 +1,30 @@
+<h1 class="mt-4">Añadir nuevo dato del sensor</h1>
+
+<form [formGroup]="form" (submit)="onSubmit(form.value)">
+  <div class="form-group">
+    <label for="co2">Nivel de Co2</label>
+    <input type="text" class="form-control" name="co2" formControlName="co2">
+  </div>
+
+  <div class="form-group">
+    <label for="temperatura">Temperatura</label>
+    <input type="text" class="form-control" name="temperatura" formControlName="temperatura">
+  </div>
+
+  <div class="form-group">
+    <label for="humedad">Humedad</label>
+    <input type="text" class="form-control" name="humedad" formControlName="humedad">
+  </div>
+
+  <div class="form-group">
+    <label for="idSensor">Id Sensor</label>
+
+  <select class="form-select" class="form-control" name="idSensor" formControlName="idSensor">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select>
+</div>
+
+  <input type="submit" class="btn btn-primary" [value]="id?'Actualizar':'Crear'" [disabled]="form.invalid">
+</form>
